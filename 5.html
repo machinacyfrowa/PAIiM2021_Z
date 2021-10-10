@@ -1,0 +1,34 @@
+<script>
+l(sum(3,4));
+
+
+    let g = 5;//zmienna globalna
+function l(text) {
+    console.log(text);
+}
+
+l("komunikat");
+l("drugi komunikat");
+l(5);
+
+function sum(a, b) {
+    let result = a + b;
+    return result;
+}
+
+
+
+l(() => {
+    return "Jestem funkcją anonimową";
+});
+
+function minusOne(num) {
+    let numberString = num.toString();
+    if(num > 0)
+        return numberString  + minusOne(num-1);
+    else return "0";
+}
+
+l(minusOne(5));
+
+</script>

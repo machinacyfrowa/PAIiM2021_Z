@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="passwordPrompt()">Tajna strona</button>
+
+    <script>
+
+        function passwordPrompt() {
+            let correctPassword = "UEBzc3cwcmQ=";
+            let providedPassword = window.prompt("Podaj hasło do tajnej strony:");
+            let encryptedPassword = window.btoa(providedPassword);
+            if(encryptedPassword == correctPassword) {
+                //autoryzacja prawidłowa
+                window.location = "file:///C:/Users/pzawadzki/Documents/js/secret.html";
+            } else {
+                document.write("Nieprawidłowe hasło!");
+            }
+        }
+    </script>
+</body>
+</html>

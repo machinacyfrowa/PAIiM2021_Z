@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div style="
+    position: fixed; 
+    bottom:0px; 
+    height: 100px;
+    width: 100%;"
+    id="cookieNotice">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, error. Nihil, maxime numquam! Labore ipsum natus quia? Modi tenetur eum fugit excepturi debitis? Repudiandae, iure aliquam? Quisquam possimus quas blanditiis!
+    <button onclick="acceptCookie()">Zamknij</button>
+   
+    <script>
+        function acceptCookie() {
+            document.getElementById('cookieNotice').style.display = "none";
+            document.getElementById('cookieNotice').innerHTML = "";
+
+        }
+    </script>
+
+</div>
+</body>
+</html>

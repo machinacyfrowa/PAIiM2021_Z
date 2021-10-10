@@ -1,0 +1,42 @@
+<script>
+    for (let index = 0; index < 10; index++) {
+        console.log("Wartość indeksu: " + index);
+        
+    }
+
+
+    let stuff = 3;
+    while(stuff > 0) {
+        document.write(stuff);
+        stuff--;
+    }
+
+    let postsLeft = 0;
+
+    do {
+        document.write("Posts left: " + postsLeft);
+    } while (postsLeft > 0)
+
+    let counter = 0;
+    while(true) {
+        counter++;
+        if(counter % 2 == 0) 
+            continue;
+        document.writeln("Licznik: " + counter + "<br>");
+        if(counter > 10) 
+            break;
+    }
+
+    let option = 3;
+    switch(option) {
+        case 1:
+            console.log("Wybrano opcje 1");
+            break;
+        case 2:
+            console.log("Wybrano opcje 2");
+            break;
+        default:
+            console.log("wybrano nieznaną opcje");
+            break;
+    }
+</script>

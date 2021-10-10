@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- onmouseover="moveButton()" -->
+    <button onmouseover="moveButton()" 
+        onclick="clickButton()"
+        id="myButton" 
+        style="position: fixed;">Złap mnie</button>
+
+    <script>
+        let b = document.getElementById('myButton');
+        //console.log(b);
+        //addEventListener('onmouseover', moveButton);
+
+        function moveButton() {
+            console.log("moveButton fired");
+            let verticalSpace = window.innerHeight;
+            verticalSpace -= b.clientHeight;
+            let horizontalSpace = window.innerWidth;
+            horizontalSpace -= b.clientWidth;
+
+            let r = Math.random(); // 0.7809985
+            r = r * horizontalSpace; // 78.09985
+            r = Math.round(r); // 78
+
+            b.style.left = r + "px";
+
+            r = Math.random(); // 0.7809985
+            r = r * verticalSpace; // 78.09985
+            r = Math.round(r); // 78
+            b.style.top = r + "px";
+        }
+        function clickButton() {
+            window.alert("Gratulacje!");
+        }
+    </script>
+</body>
+
+</html>

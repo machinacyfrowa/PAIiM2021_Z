@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            firstName: "Jan",
+            lastName: "Kowalski",
+            id: 2380,
+            grades: {
+                g1: 4,
+                g2: 5,
+                g3: 5,
+                g4: 5,
+                g5: 3 
+            },
+            print: function() {
+                document.write("Student " + this.firstName +
+                " " + this.lastName + ", numer albumu: "+this.id);
+            }
+        };
+        console.log(student.grades.g1);
+
+        student.print();
+
+        student.gender = "male";
+
+        student.go = function() {
+
+        }
+
+        console.log(student);
+
+        function Car() {
+            this.brand = "Toyota",
+            this.model = "Yaris"
+
+            this.drive = function() {
+                console.log("brum brum");
+            }
+        }
+
+        const car1 = new Car();
+        car1.drive();
+        car1.stop = function() {
+            console.log("stoje");
+        }
+        car1.stop();
+        const car2 = new Car();
+
+        Car.prototype.horn = function() {
+            console.log("beep");
+        }
+        
+        const car3 = new Car();
+
+        car3.horn();
+        car2.horn();
+        console.log(car1);
+
+        
+
+    </script>
+</body>
+</html>

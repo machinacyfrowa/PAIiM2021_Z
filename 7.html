@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="loginForm" action="">
+        <input type="email" name="" id="" required><br>
+        <input type="password" name="" id="" required><br>
+        <input type="checkbox" name="" id="tos">Regulamin<br>
+        <input type="button" value="Wyślij" onclick="verify()">
+    </form>
+
+    <script>
+        function verify() {
+            let tos = document.getElementById('tos');
+            if(tos.checked == false) {
+                window.alert("Brak akceptacji regulaminu");
+            } else {
+                document.getElementById('loginForm').submit();
+            }
+        }
+    </script>
+</body>
+</html>

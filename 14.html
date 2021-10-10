@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="password"><br>
+    <button onclick="verify()">Sprawdź hasło</button><br>
+    <span id="result"></span>
+    <script>
+        function verify() {
+            let password = new String(document.getElementById('password').value);
+            let minLength = 8;
+            let resultElement = document.getElementById('result');
+            let result = "";
+            let lenghtOK = false;
+            let complexity = 0;
+
+            if(password.length >= minLength) {
+                result = "Hasło spełnia wymagania dot. długości<br>";
+                lenghtOK = true;
+            } else {
+                result = "Hasło nie spełnia wymagań dot. długości<br>";
+            }
+
+            let r = /[0-9]/g //jedna lub więcej cyfr
+            let match = password.match(r); // match - tablica trafień
+            console.log(match)
+            if(match != null)  {
+                result += "Hasło posiada cyfry<br>";
+                complexity++;
+            } else {
+                result += "Hasło nie posiada cyfr<br>";
+            }
+
+            r = /[A-Z]/g // duze litery
+            match = password.match(r); // match - tablica trafień
+            console.log(match)
+            if(match != null)  {
+                result += "Hasło posiada wielkie litery<br>";
+                complexity++;
+            } else {
+                result += "Hasło nie posiada wielkich liter<br>";
+            }
+
+
+            r = /[a-z]/g // duze litery
+            match = password.match(r); // match - tablica trafień
+            console.log(match)
+            if(match != null)  {
+                result += "Hasło posiada małe litery<br>";
+                complexity++;
+            } else {
+                result += "Hasło nie posiada małych liter<br>";
+            }
+
+            let specialCharsCount = 0;
+            for(let i = 0; i<password.length; i++) {
+                if( (password.charCodeAt(i) >= 32 &&
+                    password.charCodeAt(i) <= 47) ||
+                    (password.charCodeAt(i) >= 58 &&
+                    password.charCodeAt(i) <= 64)
+                    )
+                    specialCharsCount++;
+            }
+
+            if(specialCharsCount > 0) {
+                result += "W haśle istnieją znaki specjalne<br>";
+                complexity++
+            } else {
+                result += "W haśle nie instnieją znaki specjalne<br>";
+            }
+
+            if(lenghtOK && complexity >= 3) {
+                result += "Hasło jest prawidłowe";
+            } else {
+                result += "Hasło nie spełnia wymogów";
+            }
+
+            resultElement.innerHTML = result;
+        }
+
+    </script>
+</body>
+</html>

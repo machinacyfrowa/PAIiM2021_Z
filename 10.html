@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = String("ala");
+        console.log(s);
+        let s2 = "ala";
+        console.log(s2);
+        let n = new Number(58);
+        console.log(n);
+        let n2 = 58;
+        console.log(n2);
+
+        const student = {
+            firstName: "Anna",
+
+            get getName() {
+                return this.firstName;
+            },
+
+            set setName(_firstName) {
+                if(_firstName != "")
+                    this.firstName = _firstName;
+            }
+        }
+
+        //student.firstName = "Monika";
+        student.setName = '';
+
+        console.log(student.getName);
+    </script>
+</body>
+</html>
